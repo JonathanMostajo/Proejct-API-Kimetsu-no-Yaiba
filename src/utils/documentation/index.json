@@ -1,0 +1,114 @@
+{
+  "characters": [
+    {
+        "endpoint": "/api/v1/characters",
+        "action": "Get ALL the characters",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Array with all the characters"
+    },{
+        "endpoint": "/api/v1/characters/:id(id)",
+        "action": "Get character by Id",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Character by Id"
+    },{
+        "endpoint": "/api/v1/characters/name/:id(name)",
+        "action": "Get character by name",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Character by name"
+    },{
+        "endpoint": "/api/v1/characters/race/:id(race)",
+        "action": "Get character by race",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Characters by race"
+    },{
+        "endpoint": "/api/v1/characters/gender/:id(id)",
+        "action": "Get character by gender",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Characters by gender"
+    },{
+        "endpoint": "/api/v1/characters/affiliation/:id(id)",
+        "action": "Get character by affiliation",
+        "method": "GET",
+        "request": "nothing",
+        "response":"Characters by affiliation"
+    },{
+        "endpoint": "/api/v1/characters",
+        "action": "Post new character (ONLY andmin users)",
+        "method": "POST",
+        "request": {
+            "name": "name (required)",
+            "img": "img (required)",
+            "gender": "gender (required)",
+            "age": "age (required, number)",
+            "race": "race (required)",
+            "affiliation": "affiliation (required)",
+            "breathing": "breathing",
+            "rank": "rank",
+            "pillar": "pillar(boolean)",
+            "isAlive": "isAlive (required, boolean)"
+        },
+        "response":{
+            "name": "name (required)",
+            "img": "img (required)",
+            "gender": "gender (required)",
+            "age": "age (required, number)",
+            "race": "race (required)",
+            "affiliation": "affiliation (required)",
+            "breathing": "breathing",
+            "rank": "rank",
+            "pillar": "pillar(boolean)",
+            "isAlive": "isAlive (required, boolean)"
+        }
+    },{
+        "endpoint": "/api/v1/characters/:id(id)",
+        "action": "Patch character by id (ONLY andmin users)",
+        "method": "PATCH",
+        "request": {
+            "paramToChange1": "new content 1",
+            "paramToChange2": "new content 2"
+        },
+        "response": {
+            "new": {
+            "paramToChange1": "new content 1",
+            "paramToChange2": "new content 2"
+        }}
+    }
+  ],
+  "user": [
+      {
+    "endpoint": "/api/v1/user",
+    "action": "Register",
+    "method": "POST",
+    "request": {
+      "name": "example",
+      "email": "example@example.com",
+      "password": "adminPassword"
+    },
+    "response": {
+      "name": "example",
+      "email": "example@example.com"
+    }
+  },{
+      "endpoint": "/api/v1/user/login",
+      "action": "Login",
+      "method":"POST",
+      "request":{
+        "email": "example@example.com",
+      "password": "adminPassword"
+      },
+      "response": {
+        "token": ""
+      }
+  },{
+    "endpoint": "/api/v1/user/logout",
+    "action": "logout",
+    "method": "POST",
+    "request": "nothing",
+    "response":"null"
+  }]
+}
