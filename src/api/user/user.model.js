@@ -13,13 +13,13 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre("save", function (next) {
     if (!validationEmail(this.email)) { 
-        return next(setError(400, "El email debe cumplir el patro, ejemplo@ejemplo.com"))
+        return next(setError(400, "El email debe cumplir el patrón, ejemplo@ejemplo.com"))
     }
     if (adminPassword === this.password) { 
         this.password = bcrypt.hashSync(this.password, 10);
         next();
     } else {
-        return next (setError(400, "Esta no es la contraseña de los admins, si quiere disponer de este roll manda un correo electrónico a team1@gmail.com y se investigará su caso a detalle para ver si puede disponer de este roll."))
+        return next (setError(400, "Si quiere ser admin, mande un correo electrónico a kimetsuapi@gmail.com y nos pondremos en contacto con usted."))
     }  
 });
 
