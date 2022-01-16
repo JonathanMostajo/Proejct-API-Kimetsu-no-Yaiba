@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cloudinary = require('cloudinary').v2
-//const documentation = require('./src/utils/documentation/index.json')
+const documentation = require('./src/utils/documentation/index.json')
 const UserRoutes = require('./src/api/user/user.routes');
 const CharacterRoutes = require('./src/api/characters/characters.routes');
 
@@ -45,14 +45,9 @@ app.use('/api/v1/user', UserRoutes)
 app.use('/api/v1/characters', CharacterRoutes)
 
 app.use('/', (req, res, next) => {
-    return res.json("documentation")
+    return res.json(documentation)
 })
-/* app.use('/characters', (req, res, next) => {
-    return res.json("documentation")
-})
-app.use('/characters/gender', (req, res, next) => {
-    return res.json("documentation")
-}) */
+
 
 app.use('*', (req, res, next) => {
     return next(setError(404, 'Route not found'))
